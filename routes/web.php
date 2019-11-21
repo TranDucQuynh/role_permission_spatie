@@ -20,7 +20,7 @@ Route::get('list', 'PostController@index')->name('post.index');
 
 Route::get('create', 'PostController@create')->name('post.create');
 Route::post('store', 'PostController@store')->name('post.store');
-Route::get('post/{id}', 'PostController@edit')->name('post.edit');
-Route::put('post/{id}', 'PostController@update')->name('post.update');
+Route::get('{id}', 'PostController@edit')->name('post.edit');
+Route::put('{id}', 'PostController@update')->name('post.update');
 Route::delete('{id}', 'PostController@destroy')->name('post.destroy');
 

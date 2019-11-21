@@ -100,6 +100,6 @@ class PostController extends Controller
     public function destroy($id)
     {
         DB::table('posts')->where('id', $id)->delete();
-//        return view('post.list');
+        return redirect()->back();
     }
 }

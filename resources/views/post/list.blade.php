@@ -18,7 +18,7 @@
       <tr>
         <th>ID</th>
         <th>Post Name</th>
-        <th><a class="btn btn-outline-success" href="{{ route('post.create') }}">New</a></th>
+        <th style="margin: auto; text-align: center"><a class="btn btn-outline-success btn-block" href="{{ route('post.create') }}">New</a></th>
       </tr>
     </thead>
     <tbody>
@@ -26,8 +26,11 @@
           <tr>
             <td>{{ $post->id }}</td>
             <td>{{ $post->name }}</td>
-            <td><a class="btn btn-outline-info" href="{{ route('post.edit', ['id'=> $post->id]) }}">Edit</a> |
-                <a class="btn btn-outline-danger" href="{{ route('post.destroy', ['id'=>$post->id]) }}">Delete</a>
+            <td style="margin: auto; text-align: center"><a class="btn btn-outline-info" href="{{ route('post.edit', ['id'=> $post->id]) }}">Edit</a> &nbsp;
+                {{--<a class="btn btn-outline-danger" href="{{ route('post.destroy', ['id'=>$post->id]) }}">Delete</a>--}}
+                <form style="display: inline-block;" action="{{ route('post.destroy', ['id'=>$post->id]) }}" method="post">@csrf @method('delete')
+                <button class="btn btn-outline-danger" type="submit">Delete</button>
+                </form>
             </td>
           </tr>
       @endforeach

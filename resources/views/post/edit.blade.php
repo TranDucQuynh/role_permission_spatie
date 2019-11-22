@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-            
+           
         <h2>Post Edit</h2>
         <form method="post" action="{{ route('post.update', ['id'=>$posts->id]) }}">
             @csrf
